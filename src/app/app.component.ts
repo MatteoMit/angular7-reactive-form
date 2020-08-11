@@ -29,6 +29,12 @@ export class AppComponent {
   onSubmit() {
     console.log(this.contactForm.value);
   }
+
+  countryList:country[] = [
+    new country("1", "Italy"),
+    new country('2', 'USA'),
+    new country('3', 'England')
+  ];
 }
 
 export class country {
