@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  name = "Angular Reactive Forms Example";
+  name = "Angular Reactive Forms Validation";
 
   contactForm = new FormGroup({
     firstname: new FormControl("", [
