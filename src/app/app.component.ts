@@ -1,4 +1,6 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'
+
 
 @Component({
   selector: 'my-app',
@@ -6,5 +8,23 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  name = 'Angular Reactive Forms Example';
+
+contactForm = new FormGroup({
+  firstname: new FormControl('', [Validators.required,Validators.minLength(2)]),
+  lastname: new FormControl(),
+  email: new FormControl(),
+  gender: new FormControl(),
+  isMarried: new FormControl(),
+  country: new FormControl(),
+  address:new FormGroup({
+    city: new FormControl(),
+    street: new FormControl(),
+    pincode:new FormControl()
+  })
+})
+
+ onSubmit() {
+  console.log(this.contactForm.value);
+} 
 }
